@@ -1,0 +1,7 @@
+#hero-pin { height: 380vh; }
+#hero-text { will-change: transform, opacity; }
+#hero-sub { will-change: transform, opacity; }
+
+#trace-laser {
+  filter: drop-shadow(0 0 4px #e2472b) drop-shadow(0 0 10px #e2472b);
+}

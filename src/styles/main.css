@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --v4-display: 'Sora', sans-serif;
+  --v4-mono: 'IBM Plex Mono', monospace;
+}
+
+body {
+  font-family: var(--v4-display);
+  background: #0b0b0d;
+  color: #f5f4f2;
+}
+
+/* scroll reveal, shared by every section on both pages */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* sparkle accents */
+.sparkle-field { position: relative; }
+.sparkle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  background: linear-gradient(#e2472b, #e2472b);
+  clip-path: polygon(50% 0%, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0% 50%, 37% 37%);
+  animation: nx-sparkle 2.6s ease-in-out infinite;
+  opacity: 0;
+}
+.sparkle.sparkle-light { background: linear-gradient(#f5f4f2, #f5f4f2); }
+.sparkle.sparkle-sm { width: 7px; height: 7px; }
+@keyframes nx-sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(20deg); }
+}
