@@ -1,7 +1,71 @@
 #hero-pin { height: 380vh; }
+
+/* The wordmark rests in the band between the fixed header and the ridge line it
+   sits behind. Sizing it off 13vw alone ignored that band, so on a short window
+   the two-line block outgrew it and the top of NEXDIM was cut off by the header.
+   Cap the type by the band's own height as well, so the mark always lands whole. */
+:root { --hero-gap: 5rem; }        /* clearance reserved above the wordmark */
+#hero-text {
+  top: var(--hero-gap);
+  align-items: flex-end;           /* hold the mark down against the ridge */
+}
+#hero-text h1 {
+  /* two lines at leading .82 -> the block is 1.64x the font size */
+  font-size: clamp(2.25rem, min(13vw, calc((42vh - var(--hero-gap)) / 1.64)), 10rem);
+}
 #hero-text { will-change: transform, opacity; }
 #hero-sub { will-change: transform, opacity; }
 
 #trace-laser {
   filter: drop-shadow(0 0 4px #e2472b) drop-shadow(0 0 10px #e2472b);
+  stroke-dasharray: var(--trace-dash, 0) var(--trace-gap, 0);
+  animation: nx-trace-sweep var(--trace-dur, 7s) linear infinite;
+  animation-play-state: paused;   /* traceLaser.js starts it when the trace is in view */
+}
+#trace-laser.is-running { animation-play-state: running; }
+
+@keyframes nx-trace-sweep {
+  from { stroke-dashoffset: var(--trace-period, 0); }
+  to   { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #trace-laser { animation: none; }
+}
+
+/* Header backdrop fade. --hdr (0-1) is written by headerScroll.js.
+   No backdrop-filter here on purpose: #hero-mountain is being scaled behind this
+   bar on every frame, so a blur would have to re-rasterise continuously against a
+   moving source. A flat fill costs one cheap paint and, at this opacity over a
+   near-black hero, is indistinguishable from the blurred version. */
+#site-header { --hdr: 0; }
+#site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #0b0b0d;
+  border-bottom: 1px solid #252528;
+  opacity: var(--hdr);
+  will-change: opacity;
+  pointer-events: none;
+}
+
+/* Height settles once, as a single 260ms tween off a class, rather than being
+   driven per-frame — animating padding every frame relayouts the header subtree
+   on each tick and is what made the bar feel like it was hitching. */
+#site-header-inner {
+  padding-block: 1rem;
+  transition: padding-block .26s cubic-bezier(.4, 0, .2, 1);
+}
+#site-header.is-compact #site-header-inner { padding-block: .625rem; }
+
+#hero-mountain { will-change: transform; }
+
+/* keep future in-page anchors clear of the fixed header */
+html { scroll-padding-top: 5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  #site-header::before { opacity: 1; }
+  #site-header-inner { transition: none; }
 }
