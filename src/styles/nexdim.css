@@ -38,17 +38,26 @@
    bar on every frame, so a blur would have to re-rasterise continuously against a
    moving source. A flat fill costs one cheap paint and, at this opacity over a
    near-black hero, is indistinguishable from the blurred version. */
-#site-header { --hdr: 0; }
+/* Fully transparent at the top, the header sits directly over the hero image
+   (always dark, regardless of theme), so its text starts fixed light. As soon
+   as it goes solid (.is-compact, ~half a screen of scroll) the backdrop and
+   text switch to the site theme — white-on-dark-ink in light mode. */
+#site-header { --hdr: 0; --header-text: #f5f4f2; --header-text-dim: #8e8e94; }
+#site-header.is-compact { --header-text: var(--text); --header-text-dim: var(--text-dim); }
 #site-header::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
+  background: #0b0b0d;
+  border-bottom: 1px solid #252528;
   opacity: var(--hdr);
   will-change: opacity;
   pointer-events: none;
+}
+#site-header.is-compact::before {
+  background: var(--bg);
+  border-bottom-color: var(--border);
 }
 
 /* Height settles once, as a single 260ms tween off a class, rather than being

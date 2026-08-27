@@ -24,7 +24,8 @@ export function initHeaderScroll() {
     }
 
     // Separate thresholds so the height tween cannot flap when scrolling
-    // hovers around the boundary.
+    // hovers around the boundary. Once compact, nexdim.css also switches the
+    // backdrop and text from the fixed hero-overlay colors to the site theme.
     const next = compact ? y > window.innerHeight * 0.45 : y > window.innerHeight * 0.55;
     if (next !== compact) {
       compact = next;

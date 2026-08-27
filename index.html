@@ -15,16 +15,16 @@
 
 <header id="site-header" class="fixed inset-x-0 top-0 z-50">
   <div id="site-header-inner" class="mx-auto max-w-[1240px] px-8 max-[600px]:px-5 flex items-center justify-between gap-4 min-[880px]:grid min-[880px]:grid-cols-[1fr_auto_1fr]">
-    <a href="/" style="font-family:var(--v4-mono)" class="justify-self-start flex items-center gap-[clamp(0.5rem,1.6vw,0.625rem)] whitespace-nowrap text-[clamp(0.6rem,2vw,0.76rem)] uppercase tracking-[clamp(0.08em,0.5vw,0.2em)]">
-      <img src="/nexdim.png" alt="Nexdim" width="42" height="42" class="w-[clamp(28px,7vw,42px)] h-[clamp(28px,7vw,42px)] shrink-0 object-contain" />
+    <a href="/" style="font-family:var(--v4-mono)" class="justify-self-start flex items-center gap-[clamp(0.5rem,1.6vw,0.625rem)] whitespace-nowrap text-[clamp(0.6rem,2vw,0.76rem)] uppercase tracking-[clamp(0.08em,0.5vw,0.2em)] text-[var(--header-text)]">
+      <img src="/images/nexdim.png" alt="Nexdim" width="42" height="42" class="w-[clamp(28px,7vw,42px)] h-[clamp(28px,7vw,42px)] shrink-0 object-contain" />
       Nexdim AI
     </a>
-    <div style="font-family:var(--v4-mono)" class="justify-self-center hidden min-[880px]:flex items-center gap-6 text-[0.66rem] uppercase tracking-[0.16em] text-[var(--text-dim)]">
+    <div style="font-family:var(--v4-mono)" class="justify-self-center hidden min-[880px]:flex items-center gap-6 text-[0.66rem] uppercase tracking-[0.16em] text-[var(--header-text-dim)]">
       <span>SIG / NEXDIM</span>
       <span>CH.01–05</span>
     </div>
     <div class="justify-self-end flex items-center gap-[clamp(0.625rem,2.4vw,1.5rem)]">
-      <a href="/velmora.html" style="font-family:var(--v4-mono)" class="whitespace-nowrap text-[clamp(0.6rem,1.9vw,0.75rem)] uppercase tracking-[clamp(0.06em,0.45vw,0.16em)] text-[var(--text-dim)] hover:text-[#e2472b] transition-colors">
+      <a href="/velmora.html" style="font-family:var(--v4-mono)" class="whitespace-nowrap text-[clamp(0.6rem,1.9vw,0.75rem)] uppercase tracking-[clamp(0.06em,0.45vw,0.16em)] text-[var(--header-text-dim)] hover:text-[#e2472b] transition-colors">
         Velmora
       </a>
       <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-[clamp(0.75rem,3vw,1.5rem)] py-[clamp(0.5rem,1.6vw,0.75rem)] text-[clamp(0.7rem,2vw,0.85rem)] whitespace-nowrap font-medium rounded-none border transition-colors duration-150 bg-[#e2472b] text-[#0b0b0d] border-[#e2472b] hover:bg-[#f5f4f2] hover:text-[#0b0b0d] hover:border-[#f5f4f2]">
@@ -36,11 +36,11 @@
 
 <main>
   <!-- hero: pinned mountain reveal -->
-  <section id="hero-pin" class="relative border-b border-[var(--border)]">
-    <div class="sticky top-0 h-screen w-full overflow-hidden bg-[var(--bg)]">
+  <section id="hero-pin" class="relative border-b border-[#252528]">
+    <div class="sticky top-0 h-screen w-full overflow-hidden bg-[#0b0b0d]">
       <!-- text sits BEHIND the mountain: z-10, only visible through the image's transparent sky -->
       <div id="hero-text" class="absolute inset-x-0 bottom-[58%] flex justify-center px-6 opacity-0 z-10" style="transform:translateY(60vh)">
-        <h1 style="font-family:var(--v4-display)" class="text-[clamp(3rem,13vw,10rem)] font-extrabold uppercase tracking-[-0.02em] leading-[0.82] text-[var(--text)] text-center">
+        <h1 style="font-family:var(--v4-display)" class="text-[clamp(3rem,13vw,10rem)] font-extrabold uppercase tracking-[-0.02em] leading-[0.82] text-white text-center">
           NEXDIM<br/>AI
         </h1>
       </div>
@@ -61,7 +61,7 @@
           <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-[0.85rem] font-medium rounded-none border transition-colors duration-150 bg-[#e2472b] text-[#0b0b0d] border-[#e2472b] hover:bg-[#f5f4f2] hover:text-[#0b0b0d] hover:border-[#f5f4f2]">
             Book a Meeting
           </a>
-          <a href="/velmora.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-[0.85rem] font-medium rounded-none border transition-colors duration-150 bg-transparent text-[var(--text)] border-[var(--border-strong)] hover:border-[#e2472b] hover:text-[#e2472b]">
+          <a href="/velmora.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-[0.85rem] font-medium rounded-none border transition-colors duration-150 bg-transparent text-[#f5f4f2] border-[#3a3a3e] hover:border-[#e2472b] hover:text-[#e2472b]">
             Explore Velmora
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
