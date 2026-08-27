@@ -11,5 +11,8 @@
     "@tailwindcss/vite": "^4.3.3",
     "tailwindcss": "^4.3.3",
     "vite": "^8.2.2"
+  },
+  "dependencies": {
+    "resend": "^6.24.0"
   }
 }
