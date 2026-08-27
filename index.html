@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nexdim AI — Applied AI agents for business</title>
+<script>try{var t=localStorage.getItem('nx-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/src/styles/main.css">
 <link rel="stylesheet" href="/src/styles/nexdim.css">
 </head>
-<body class="bg-[#0b0b0d] text-[#f5f4f2]">
+<body class="bg-[var(--bg)] text-[var(--text)]">
 
 <header id="site-header" class="fixed inset-x-0 top-0 z-50">
   <div id="site-header-inner" class="mx-auto max-w-[1240px] px-8 max-[600px]:px-5 flex items-center justify-between gap-4 min-[880px]:grid min-[880px]:grid-cols-[1fr_auto_1fr]">
@@ -18,12 +19,12 @@
       <img src="/nexdim.png" alt="Nexdim" width="42" height="42" class="w-[clamp(28px,7vw,42px)] h-[clamp(28px,7vw,42px)] shrink-0 object-contain" />
       Nexdim AI
     </a>
-    <div style="font-family:var(--v4-mono)" class="justify-self-center hidden min-[880px]:flex items-center gap-6 text-[0.66rem] uppercase tracking-[0.16em] text-[#8e8e94]">
+    <div style="font-family:var(--v4-mono)" class="justify-self-center hidden min-[880px]:flex items-center gap-6 text-[0.66rem] uppercase tracking-[0.16em] text-[var(--text-dim)]">
       <span>SIG / NEXDIM</span>
       <span>CH.01–05</span>
     </div>
     <div class="justify-self-end flex items-center gap-[clamp(0.625rem,2.4vw,1.5rem)]">
-      <a href="/velmora.html" style="font-family:var(--v4-mono)" class="whitespace-nowrap text-[clamp(0.6rem,1.9vw,0.75rem)] uppercase tracking-[clamp(0.06em,0.45vw,0.16em)] text-[#8e8e94] hover:text-[#e2472b] transition-colors">
+      <a href="/velmora.html" style="font-family:var(--v4-mono)" class="whitespace-nowrap text-[clamp(0.6rem,1.9vw,0.75rem)] uppercase tracking-[clamp(0.06em,0.45vw,0.16em)] text-[var(--text-dim)] hover:text-[#e2472b] transition-colors">
         Velmora
       </a>
       <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-[clamp(0.75rem,3vw,1.5rem)] py-[clamp(0.5rem,1.6vw,0.75rem)] text-[clamp(0.7rem,2vw,0.85rem)] whitespace-nowrap font-medium rounded-none border transition-colors duration-150 bg-[#e2472b] text-[#0b0b0d] border-[#e2472b] hover:bg-[#f5f4f2] hover:text-[#0b0b0d] hover:border-[#f5f4f2]">
@@ -35,11 +36,11 @@
 
 <main>
   <!-- hero: pinned mountain reveal -->
-  <section id="hero-pin" class="relative border-b border-[#252528]">
-    <div class="sticky top-0 h-screen w-full overflow-hidden bg-[#0b0b0d]">
+  <section id="hero-pin" class="relative border-b border-[var(--border)]">
+    <div class="sticky top-0 h-screen w-full overflow-hidden bg-[var(--bg)]">
       <!-- text sits BEHIND the mountain: z-10, only visible through the image's transparent sky -->
       <div id="hero-text" class="absolute inset-x-0 bottom-[58%] flex justify-center px-6 opacity-0 z-10" style="transform:translateY(60vh)">
-        <h1 style="font-family:var(--v4-display)" class="text-[clamp(3rem,13vw,10rem)] font-extrabold uppercase tracking-[-0.02em] leading-[0.82] text-[#f5f4f2] text-center">
+        <h1 style="font-family:var(--v4-display)" class="text-[clamp(3rem,13vw,10rem)] font-extrabold uppercase tracking-[-0.02em] leading-[0.82] text-[var(--text)] text-center">
           NEXDIM<br/>AI
         </h1>
       </div>
@@ -60,7 +61,7 @@
           <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-[0.85rem] font-medium rounded-none border transition-colors duration-150 bg-[#e2472b] text-[#0b0b0d] border-[#e2472b] hover:bg-[#f5f4f2] hover:text-[#0b0b0d] hover:border-[#f5f4f2]">
             Book a Meeting
           </a>
-          <a href="/velmora.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-[0.85rem] font-medium rounded-none border transition-colors duration-150 bg-transparent text-[#f5f4f2] border-[#3a3a3e] hover:border-[#e2472b] hover:text-[#e2472b]">
+          <a href="/velmora.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-[0.85rem] font-medium rounded-none border transition-colors duration-150 bg-transparent text-[var(--text)] border-[var(--border-strong)] hover:border-[#e2472b] hover:text-[#e2472b]">
             Explore Velmora
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -70,25 +71,25 @@
   </section>
 
   <!-- stats band -->
-  <section class="border-b border-[#252528] pt-16 pb-0">
+  <section class="border-b border-[var(--border)] pt-16 pb-0">
     <div class="mx-auto max-w-[1240px] px-8 max-[600px]:px-5">
       <div class="reveal">
-        <div class="border-t border-[#252528] grid grid-cols-4 max-[760px]:grid-cols-2 max-[420px]:grid-cols-1">
+        <div class="border-t border-[var(--border)] grid grid-cols-4 max-[760px]:grid-cols-2 max-[420px]:grid-cols-1">
           <div class="px-6 py-9">
-            <p style="font-family:var(--v4-display)" class="text-[2.2rem] font-semibold tracking-[-0.02em] text-[#f5f4f2] mb-1.5">98.7%</p>
-            <p style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[#8e8e94]">Uptime</p>
+            <p style="font-family:var(--v4-display)" class="text-[2.2rem] font-semibold tracking-[-0.02em] text-[var(--text)] mb-1.5">98.7%</p>
+            <p style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[var(--text-dim)]">Uptime</p>
           </div>
-          <div class="px-6 py-9 border-l border-[#252528] max-[420px]:border-l-0">
-            <p style="font-family:var(--v4-display)" class="text-[2.2rem] font-semibold tracking-[-0.02em] text-[#f5f4f2] mb-1.5">500M+</p>
-            <p style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[#8e8e94]">Vectors indexed</p>
+          <div class="px-6 py-9 border-l border-[var(--border)] max-[420px]:border-l-0">
+            <p style="font-family:var(--v4-display)" class="text-[2.2rem] font-semibold tracking-[-0.02em] text-[var(--text)] mb-1.5">500M+</p>
+            <p style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[var(--text-dim)]">Vectors indexed</p>
           </div>
-          <div class="px-6 py-9 border-l border-[#252528] max-[420px]:border-l-0">
+          <div class="px-6 py-9 border-l border-[var(--border)] max-[420px]:border-l-0">
             <p style="font-family:var(--v4-display)" class="text-[2.2rem] font-semibold tracking-[-0.02em] text-[#e2472b] mb-1.5">1.2s</p>
-            <p style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[#8e8e94]">Avg. response time</p>
+            <p style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[var(--text-dim)]">Avg. response time</p>
           </div>
-          <div class="px-6 py-9 border-l border-[#252528] max-[420px]:border-l-0">
-            <p style="font-family:var(--v4-display)" class="text-[2.2rem] font-semibold tracking-[-0.02em] text-[#f5f4f2] mb-1.5">24/7</p>
-            <p style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[#8e8e94]">Always live</p>
+          <div class="px-6 py-9 border-l border-[var(--border)] max-[420px]:border-l-0">
+            <p style="font-family:var(--v4-display)" class="text-[2.2rem] font-semibold tracking-[-0.02em] text-[var(--text)] mb-1.5">24/7</p>
+            <p style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[var(--text-dim)]">Always live</p>
           </div>
         </div>
       </div>
@@ -96,7 +97,7 @@
   </section>
 
   <!-- how we work -->
-  <section id="how-we-work" class="border-b border-[#252528] py-20">
+  <section id="how-we-work" class="border-b border-[var(--border)] py-20">
     <div class="mx-auto max-w-[1240px] px-8 max-[600px]:px-5">
       <div class="reveal">
         <div class="grid grid-cols-[0.4fr_1fr] gap-14 mb-16 max-[860px]:grid-cols-1 max-[860px]:gap-5">
@@ -109,39 +110,39 @@
 
       <div>
         <div class="reveal">
-          <div class="grid grid-cols-[0.4fr_1fr] gap-14 py-9 max-[860px]:grid-cols-1 max-[860px]:gap-3 border-t border-[#252528]">
+          <div class="grid grid-cols-[0.4fr_1fr] gap-14 py-9 max-[860px]:grid-cols-1 max-[860px]:gap-3 border-t border-[var(--border)]">
             <div class="flex items-start gap-4">
-              <span style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[#85858c] pt-1">01</span>
+              <span style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[var(--text-faint)] pt-1">01</span>
               <h3 style="font-family:var(--v4-display)" class="text-[1.15rem] font-medium tracking-[-0.01em]">Custom software</h3>
             </div>
-            <p class="text-[0.98rem] leading-[1.65] text-[#a3a3a8] max-w-[58ch] mb-0">Bespoke software and internal tools for the workflows off-the-shelf products don’t cover.</p>
+            <p class="text-[0.98rem] leading-[1.65] text-[var(--text-muted)] max-w-[58ch] mb-0">Bespoke software and internal tools for the workflows off-the-shelf products don’t cover.</p>
           </div>
         </div>
         <div class="reveal">
-          <div class="grid grid-cols-[0.4fr_1fr] gap-14 py-9 max-[860px]:grid-cols-1 max-[860px]:gap-3 border-t border-[#252528]">
+          <div class="grid grid-cols-[0.4fr_1fr] gap-14 py-9 max-[860px]:grid-cols-1 max-[860px]:gap-3 border-t border-[var(--border)]">
             <div class="flex items-start gap-4">
-              <span style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[#85858c] pt-1">02</span>
+              <span style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[var(--text-faint)] pt-1">02</span>
               <h3 style="font-family:var(--v4-display)" class="text-[1.15rem] font-medium tracking-[-0.01em]">AI integration</h3>
             </div>
-            <p class="text-[0.98rem] leading-[1.65] text-[#a3a3a8] max-w-[58ch] mb-0">AI layered into the CRMs, phone systems, and spreadsheets you already run — no rip-and-replace.</p>
+            <p class="text-[0.98rem] leading-[1.65] text-[var(--text-muted)] max-w-[58ch] mb-0">AI layered into the CRMs, phone systems, and spreadsheets you already run — no rip-and-replace.</p>
           </div>
         </div>
         <div class="reveal">
-          <div class="grid grid-cols-[0.4fr_1fr] gap-14 py-9 max-[860px]:grid-cols-1 max-[860px]:gap-3 border-t border-[#252528]">
+          <div class="grid grid-cols-[0.4fr_1fr] gap-14 py-9 max-[860px]:grid-cols-1 max-[860px]:gap-3 border-t border-[var(--border)]">
             <div class="flex items-start gap-4">
-              <span style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[#85858c] pt-1">03</span>
+              <span style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[var(--text-faint)] pt-1">03</span>
               <h3 style="font-family:var(--v4-display)" class="text-[1.15rem] font-medium tracking-[-0.01em]">AI agent solutions</h3>
             </div>
-            <p class="text-[0.98rem] leading-[1.65] text-[#a3a3a8] max-w-[58ch] mb-0">Custom agents designed around one workflow at a time — support, sales, scheduling, data entry.</p>
+            <p class="text-[0.98rem] leading-[1.65] text-[var(--text-muted)] max-w-[58ch] mb-0">Custom agents designed around one workflow at a time — support, sales, scheduling, data entry.</p>
           </div>
         </div>
         <div class="reveal">
-          <div class="grid grid-cols-[0.4fr_1fr] gap-14 py-9 max-[860px]:grid-cols-1 max-[860px]:gap-3 border-t border-[#252528]">
+          <div class="grid grid-cols-[0.4fr_1fr] gap-14 py-9 max-[860px]:grid-cols-1 max-[860px]:gap-3 border-t border-[var(--border)]">
             <div class="flex items-start gap-4">
-              <span style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[#85858c] pt-1">04</span>
+              <span style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[var(--text-faint)] pt-1">04</span>
               <h3 style="font-family:var(--v4-display)" class="text-[1.15rem] font-medium tracking-[-0.01em]">Products</h3>
             </div>
-            <p class="text-[0.98rem] leading-[1.65] text-[#a3a3a8] max-w-[58ch] mb-0">Software Nexdim AI ships and owns outright. The flagship is Velmora, our voice-agent calling platform.</p>
+            <p class="text-[0.98rem] leading-[1.65] text-[var(--text-muted)] max-w-[58ch] mb-0">Software Nexdim AI ships and owns outright. The flagship is Velmora, our voice-agent calling platform.</p>
           </div>
         </div>
       </div>
@@ -149,7 +150,7 @@
   </section>
 
   <!-- velmora -->
-  <section id="velmora" class="border-b border-[#252528] py-20">
+  <section id="velmora" class="border-b border-[var(--border)] py-20">
     <div class="mx-auto max-w-[1240px] px-8 max-[600px]:px-5">
       <div class="grid grid-cols-[1fr_0.9fr] gap-16 items-center max-[900px]:grid-cols-1 max-[900px]:gap-10">
         <div class="reveal">
@@ -157,24 +158,24 @@
           <h2 style="font-family:var(--v4-display)" class="text-[clamp(1.6rem,3vw,2.4rem)] font-semibold tracking-[-0.03em] mb-5 max-w-[19ch]">
             Velmora — voice agents that call, talk, and report back.
           </h2>
-          <p class="text-[1rem] leading-[1.65] text-[#a3a3a8] max-w-[52ch] mb-8">
+          <p class="text-[1rem] leading-[1.65] text-[var(--text-muted)] max-w-[52ch] mb-8">
             Configure the model, the voice, and the goal. Velmora places real outbound calls, holds a natural two-way conversation, and comes back with a transcript, an outcome, and next steps — not a recording to sift through.
           </p>
-          <a href="/velmora.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-[0.85rem] font-medium rounded-none border transition-colors duration-150 bg-transparent text-[#f5f4f2] border-[#3a3a3e] hover:border-[#e2472b] hover:text-[#e2472b]">
+          <a href="/velmora.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-[0.85rem] font-medium rounded-none border transition-colors duration-150 bg-transparent text-[var(--text)] border-[var(--border-strong)] hover:border-[#e2472b] hover:text-[#e2472b]">
             Explore Velmora
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
 
         <div class="reveal">
-          <img src="/images/velmora-album-cover.webp" alt="Nexdim album cover" class="w-full h-auto border border-[#252528]" />
+          <img src="/images/velmora-album-cover.webp" alt="Nexdim album cover" class="w-full h-auto border border-[var(--border)]" />
         </div>
       </div>
     </div>
   </section>
 
   <!-- why nexdim -->
-  <section id="why-nexdim" class="border-b border-[#252528] py-20">
+  <section id="why-nexdim" class="border-b border-[var(--border)] py-20">
     <div class="mx-auto max-w-[1240px] px-8 max-[600px]:px-5">
       <div class="reveal">
         <div class="grid grid-cols-[0.4fr_1fr] gap-14 max-[860px]:grid-cols-1 max-[860px]:gap-5">
@@ -183,14 +184,14 @@
             <h2 style="font-family:var(--v4-display)" class="text-[clamp(1.6rem,3vw,2.4rem)] font-semibold tracking-[-0.03em] max-w-[22ch] mb-6">
               Built for clarity, control, and real outcomes.
             </h2>
-            <p class="text-[1rem] leading-[1.65] text-[#a3a3a8] max-w-[58ch] mb-12">
+            <p class="text-[1rem] leading-[1.65] text-[var(--text-muted)] max-w-[58ch] mb-12">
               We build AI solutions that are designed to be understood, measured, and improved. Whether it's an agent, an automation, a voice system, or a custom AI workflow, you know what it's doing, how it's performing, and where it fits into your business.
             </p>
-            <div class="grid grid-cols-2 gap-px bg-[#252528] border border-[#252528] max-[560px]:grid-cols-1">
-              <div class="bg-[#0b0b0d] p-6"><span style="font-family:var(--v4-mono)" class="text-[0.84rem] uppercase tracking-[0.06em] text-[#f5f4f2]">Clear outcomes</span></div>
-              <div class="bg-[#0b0b0d] p-6"><span style="font-family:var(--v4-mono)" class="text-[0.84rem] uppercase tracking-[0.06em] text-[#f5f4f2]">Full visibility</span></div>
-              <div class="bg-[#0b0b0d] p-6"><span style="font-family:var(--v4-mono)" class="text-[0.84rem] uppercase tracking-[0.06em] text-[#f5f4f2]">No black boxes</span></div>
-              <div class="bg-[#0b0b0d] p-6"><span style="font-family:var(--v4-mono)" class="text-[0.84rem] uppercase tracking-[0.06em] text-[#f5f4f2]">Built around your workflow</span></div>
+            <div class="grid grid-cols-2 gap-px bg-[var(--border)] border border-[var(--border)] max-[560px]:grid-cols-1">
+              <div class="bg-[var(--bg)] p-6"><span style="font-family:var(--v4-mono)" class="text-[0.84rem] uppercase tracking-[0.06em] text-[var(--text)]">Clear outcomes</span></div>
+              <div class="bg-[var(--bg)] p-6"><span style="font-family:var(--v4-mono)" class="text-[0.84rem] uppercase tracking-[0.06em] text-[var(--text)]">Full visibility</span></div>
+              <div class="bg-[var(--bg)] p-6"><span style="font-family:var(--v4-mono)" class="text-[0.84rem] uppercase tracking-[0.06em] text-[var(--text)]">No black boxes</span></div>
+              <div class="bg-[var(--bg)] p-6"><span style="font-family:var(--v4-mono)" class="text-[0.84rem] uppercase tracking-[0.06em] text-[var(--text)]">Built around your workflow</span></div>
             </div>
           </div>
         </div>
@@ -199,7 +200,7 @@
   </section>
 
   <!-- about -->
-  <section id="about" class="border-b border-[#252528] py-20">
+  <section id="about" class="border-b border-[var(--border)] py-20">
     <div class="mx-auto max-w-[1240px] px-8 max-[600px]:px-5">
       <div class="reveal">
         <div class="grid grid-cols-[0.4fr_1fr] gap-14 max-[860px]:grid-cols-1 max-[860px]:gap-5">
@@ -209,8 +210,8 @@
               A studio for custom AI solutions.
             </h2>
             <div class="flex flex-col gap-4 max-w-[62ch]">
-              <p class="leading-[1.68] mb-0 text-[1.04rem] text-[#f5f4f2]">Nexdim AI designs and ships custom AI solutions end-to-end — from intelligent agents and automation to voice, reasoning, integrations, and the infrastructure behind them. We build around the workflow in front of us, not a one-size-fits-all platform.</p>
-              <p class="leading-[1.68] mb-0 text-[0.96rem] text-[#a3a3a8]">Velmora, our voice-calling product, is one expression of that approach: focused, purpose-built, and engineered to do voice properly. Everything we build gets the same treatment — thoughtful, custom, and built for the problem at hand.</p>
+              <p class="leading-[1.68] mb-0 text-[1.04rem] text-[var(--text)]">Nexdim AI designs and ships custom AI solutions end-to-end — from intelligent agents and automation to voice, reasoning, integrations, and the infrastructure behind them. We build around the workflow in front of us, not a one-size-fits-all platform.</p>
+              <p class="leading-[1.68] mb-0 text-[0.96rem] text-[var(--text-muted)]">Velmora, our voice-calling product, is one expression of that approach: focused, purpose-built, and engineered to do voice properly. Everything we build gets the same treatment — thoughtful, custom, and built for the problem at hand.</p>
             </div>
           </div>
         </div>
@@ -219,7 +220,7 @@
   </section>
 
   <!-- whats next -->
-  <section id="whats-next" class="border-b border-[#252528] py-20">
+  <section id="whats-next" class="border-b border-[var(--border)] py-20">
     <div class="mx-auto max-w-[1240px] px-8 max-[600px]:px-5">
       <div class="grid grid-cols-[1fr_0.9fr] gap-16 items-center max-[900px]:grid-cols-1 max-[900px]:gap-10">
         <div class="reveal">
@@ -227,12 +228,12 @@
           <h2 style="font-family:var(--v4-display)" class="text-[clamp(1.6rem,3vw,2.4rem)] font-semibold tracking-[-0.03em] mb-5 max-w-[19ch]">
             Velmora is one interface. It isn't the ceiling.
           </h2>
-          <p class="text-[1rem] leading-[1.65] text-[#a3a3a8] max-w-[48ch] mb-0">
+          <p class="text-[1rem] leading-[1.65] text-[var(--text-muted)] max-w-[48ch] mb-0">
             Velmora runs on Nexdim's core stack — retrieval, agents, and custom model integration. The same infrastructure is already powering work past voice: internal copilots, agentic workflows, and RAG systems built around a team's own data.
           </p>
         </div>
         <div class="reveal">
-          <img src="/images/immersive-ai-interface.jpg" alt="Immersive AI interface" class="w-full h-[440px] max-[600px]:h-[320px] object-cover border border-[#252528]" />
+          <img src="/images/immersive-ai-interface.jpg" alt="Immersive AI interface" class="w-full h-[440px] max-[600px]:h-[320px] object-cover border border-[var(--border)]" />
         </div>
       </div>
     </div>
@@ -249,25 +250,25 @@
         <h2 style="font-family:var(--v4-display)" class="text-[clamp(2.4rem,6vw,4.6rem)] font-semibold tracking-[-0.04em] leading-[1.02] max-w-[13ch]">
           Let's solve something together.
         </h2>
-        <p class="text-[1.02rem] leading-[1.65] text-[#a3a3a8] max-w-[54ch] mt-7">
+        <p class="text-[1.02rem] leading-[1.65] text-[var(--text-muted)] max-w-[54ch] mt-7">
           Tell us what you're trying to solve. We'll explore where AI can make a real difference — from intelligent agents and automation to voice and custom integrations.
         </p>
         <div class="flex flex-wrap items-center gap-6 mt-9">
           <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-[0.85rem] font-medium rounded-none border transition-colors duration-150 bg-[#e2472b] text-[#0b0b0d] border-[#e2472b] hover:bg-[#f5f4f2] hover:text-[#0b0b0d] hover:border-[#f5f4f2]">
             Talk to us
           </a>
-          <a href="mailto:contact@nexdimai.com" style="font-family:var(--v4-mono)" class="text-[0.85rem] text-[#8e8e94] hover:text-[#e2472b] transition-colors">contact@nexdimai.com</a>
+          <a href="mailto:contact@nexdimai.com" style="font-family:var(--v4-mono)" class="text-[0.85rem] text-[var(--text-dim)] hover:text-[#e2472b] transition-colors">contact@nexdimai.com</a>
         </div>
 
         <form id="contact-form" class="grid grid-cols-2 gap-4 max-w-[46ch] mt-12 max-[500px]:grid-cols-1">
           <input type="text" name="name" placeholder="Name" required
             style="font-family:var(--v4-display)"
-            class="bg-transparent border border-[#3a3a3e] text-[#f5f4f2] placeholder:text-[#6a6a70] px-4 py-3 text-[0.9rem] outline-none focus:border-[#e2472b]" />
+            class="bg-transparent border border-[var(--border-strong)] text-[var(--text)] placeholder:text-[var(--text-placeholder)] px-4 py-3 text-[0.9rem] outline-none focus:border-[#e2472b]" />
           <input type="email" name="email" placeholder="Email" required
             style="font-family:var(--v4-display)"
-            class="bg-transparent border border-[#3a3a3e] text-[#f5f4f2] placeholder:text-[#6a6a70] px-4 py-3 text-[0.9rem] outline-none focus:border-[#e2472b]" />
+            class="bg-transparent border border-[var(--border-strong)] text-[var(--text)] placeholder:text-[var(--text-placeholder)] px-4 py-3 text-[0.9rem] outline-none focus:border-[#e2472b]" />
           <button type="submit"
-            class="col-span-2 max-[500px]:col-span-1 inline-flex items-center justify-center px-6 py-3 text-[0.85rem] font-medium border transition-colors duration-150 bg-transparent text-[#f5f4f2] border-[#3a3a3e] hover:border-[#e2472b] hover:text-[#e2472b]">
+            class="col-span-2 max-[500px]:col-span-1 inline-flex items-center justify-center px-6 py-3 text-[0.85rem] font-medium border transition-colors duration-150 bg-transparent text-[var(--text)] border-[var(--border-strong)] hover:border-[#e2472b] hover:text-[#e2472b]">
             Send
           </button>
         </form>
@@ -276,10 +277,16 @@
   </section>
 </main>
 
-<footer class="border-t border-[#252528] py-6">
+<footer class="border-t border-[var(--border)] py-6">
   <div class="mx-auto max-w-[1240px] px-8 max-[600px]:px-5 flex items-center justify-between flex-wrap gap-3">
-    <a href="/" style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[#8e8e94] hover:text-[#e2472b] transition-colors">© Nexdim AI</a>
-    <span style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[#8e8e94]">Applied AI agents for business</span>
+    <a href="/" style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[var(--text-dim)] hover:text-[#e2472b] transition-colors">© Nexdim AI</a>
+    <div class="flex items-center gap-4">
+      <span style="font-family:var(--v4-mono)" class="text-[0.66rem] uppercase tracking-[0.16em] text-[var(--text-dim)]">Applied AI agents for business</span>
+      <button id="theme-toggle" type="button" aria-label="Toggle theme" class="theme-toggle inline-flex items-center justify-center w-8 h-8 shrink-0 border border-[var(--border-strong)] text-[var(--text-dim)] hover:text-[#e2472b] hover:border-[#e2472b] transition-colors">
+        <svg class="icon-sun w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
   </div>
 </footer>
 

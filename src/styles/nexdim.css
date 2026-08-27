@@ -44,8 +44,8 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: #0b0b0d;
-  border-bottom: 1px solid #252528;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
   opacity: var(--hdr);
   will-change: opacity;
   pointer-events: none;
