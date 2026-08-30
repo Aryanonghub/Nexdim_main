@@ -28,6 +28,8 @@ Message:
 ${message || "N/A"}`;
 }
 
+// Mirrors api/send-email.js so `npm run dev` behaves like production. Reads the
+// unprefixed vars via loadEnv(..., "") so the key never reaches the client bundle.
 function resendApiPlugin() {
   const handleEmailRequest = async (req, res, env) => {
     let body = "";
@@ -37,9 +39,22 @@ function resendApiPlugin() {
     req.on("end", async () => {
       try {
         const data = JSON.parse(body || "{}");
-        const apiKey = env.VITE_RESEND_API_KEY;
-        const resend = new Resend(apiKey);
+        const apiKey = env.RESEND_API_KEY;
         const { name, email, phone, message } = data;
+
+        if (!apiKey || !env.RESEND_FROM_EMAIL || !env.RESEND_TO_EMAIL) {
+          res.statusCode = 500;
+          res.setHeader("Content-Type", "application/json");
+          res.end(
+            JSON.stringify({
+              success: false,
+              error: "Email is not configured on the server.",
+            }),
+          );
+          return;
+        }
+
+        const resend = new Resend(apiKey);
 
         if (!name || !email) {
           res.statusCode = 400;
@@ -53,8 +68,8 @@ function resendApiPlugin() {
           return;
         }
 
-        const fromEmail = env.VITE_RESEND_FROM_EMAIL;
-        const toEmail = env.VITE_RESEND_TO_EMAIL;
+        const fromEmail = env.RESEND_FROM_EMAIL;
+        const toEmail = env.RESEND_TO_EMAIL;
 
         const response = await resend.emails.send({
           from: fromEmail,

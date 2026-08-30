@@ -78,33 +78,6 @@ export function initContactForm() {
         errorMsg = apiErr.message;
       }
 
-      // Direct Resend API fallback if server endpoint failed
-      if (!success) {
-        const apiKey = import.meta.env.VITE_RESEND_API_KEY;
-        const fromEmail = import.meta.env.VITE_RESEND_FROM_EMAIL;
-        const toEmail = import.meta.env.VITE_RESEND_TO_EMAIL;
-
-        const directRes = await fetch('https://api.resend.com/emails', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${apiKey}`,
-          },
-          body: JSON.stringify({
-            from: fromEmail,
-            to: [toEmail],
-            subject: `New Contact Inquiry from ${name}`,
-            text: buildEmailText({ name, email, phone, message }),
-          }),
-        });
-
-        const directData = await directRes.json().catch(() => ({}));
-        if (directRes.ok && directData.id) {
-          success = true;
-        } else {
-          errorMsg = directData.message || errorMsg || 'Failed to send email via Resend.';
-        }
-      }
 
       if (success) {
         showStatus('Thank you! Your message has been sent successfully.', 'success');
