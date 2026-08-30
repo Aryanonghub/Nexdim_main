@@ -28,11 +28,19 @@ export function initHeroPin() {
     if (Math.abs(progress - last) < 0.0015) return;
     last = progress;
 
-    heroText.style.transform = `translateY(${(1 - progress) * 60}vh)`;
-    heroText.style.opacity = Math.min(progress * 2.2, 1);
-    heroMountain.style.transform = `scale(${1.15 - progress * 0.15})`;
+    // Three phases, strictly in order — wordmark rises, then the eyebrow, then
+    // the bottom copy. Overlapping any two of them ran the rising wordmark
+    // straight through text below it.
+    // Sequential, not simultaneous: the wordmark finishes rising by 65% of the
+    // reveal, and only then does the sub copy fade in. Overlapping the two ran
+    // the rising wordmark straight through the text on narrow screens, where the
+    // sub block is tall enough to reach up into the wordmark's path.
+    const wm = Math.min(progress / 0.65, 1);
+    heroText.style.transform = `translateY(${(1 - wm) * 60}vh)`;
+    heroText.style.opacity = Math.min(wm * 2.2, 1);
+    heroMountain.style.transform = `scale(${1.15 - wm * 0.15})`;
 
-    const subP = Math.max((progress - 0.55) / 0.45, 0);
+    const subP = Math.max((progress - 0.72) / 0.28, 0);
     heroSub.style.opacity = subP;
     heroSub.style.transform = `translateY(${(1 - subP) * 20}px)`;
   }

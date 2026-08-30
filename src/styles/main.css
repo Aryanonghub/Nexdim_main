@@ -45,6 +45,9 @@
   --border-strong: #3a3a3e;
 }
 
+/* keep in-page anchors clear of the header on both pages */
+html { scroll-padding-top: 5rem; }
+
 body {
   font-family: var(--v4-display);
   background: var(--bg);

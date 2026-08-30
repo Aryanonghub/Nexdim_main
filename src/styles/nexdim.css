@@ -9,9 +9,18 @@
   top: var(--hero-gap);
   align-items: flex-end;           /* hold the mark down against the ridge */
 }
+/* Very short windows cannot fit a full-size wordmark above the copy block, so the
+   mark lifts and the band shrinks with it. Anything 620px tall or more — every
+   phone and normal desktop height — keeps the original 58% rest and full size. */
+:root { --hero-band: 42vh; }
+@media (max-height: 620px) {
+  :root { --hero-band: 34vh; }
+  #hero-text { bottom: 66%; }
+}
 #hero-text h1 {
-  /* two lines at leading .82 -> the block is 1.64x the font size */
-  font-size: clamp(2.25rem, min(13vw, calc((42vh - var(--hero-gap)) / 1.64)), 10rem);
+  /* two lines at leading .82 -> the block is 1.64x the font size; the band is
+     what is left under the header once the 66% rest position is taken out */
+  font-size: clamp(2rem, min(13vw, calc((var(--hero-band) - var(--hero-gap)) / 1.64)), 10rem);
 }
 #hero-text { will-change: transform, opacity; }
 #hero-sub { will-change: transform, opacity; }
@@ -71,8 +80,6 @@
 
 #hero-mountain { will-change: transform; }
 
-/* keep future in-page anchors clear of the fixed header */
-html { scroll-padding-top: 5rem; }
 
 @media (prefers-reduced-motion: reduce) {
   #site-header::before { opacity: 1; }
